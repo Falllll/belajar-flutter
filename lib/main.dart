@@ -12,11 +12,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int number = 0;
+  String message = "Tekan dong";
 
-  void tekanTombol() {
+  void pressed() {
     setState(() {
-      number += 1;
+      message = "UwU";
     });
   }
 
@@ -25,19 +25,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Stateful Widget Demo"),
+          title: Text('Anonymous Function Demo'),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                number.toString(),
-                style: TextStyle(
-                    fontSize: 10 + number.toDouble(),
-                    color: number % 2 == 0 ? Colors.red : Colors.blue),
-              ),
-              ElevatedButton(onPressed: tekanTombol, child: Text("Tekan"))
+              Text(message),
+              ElevatedButton(onPressed: pressed, child: Text("Tekan Saya"))
             ],
           ),
         ),
