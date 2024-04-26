@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,42 +13,29 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Widget> widgets = [];
-  int counter = 1;
-
+  Random random = Random();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Latihan List"),
+        appBar: AppBar(title: Text("Latihan Animated Container"),),
+        body: Center(
+          child: GestureDetector(
+            onTap: (){
+              setState(() {
+                
+              });
+            },
+            child: AnimatedContainer(
+            color: Color.fromARGB(255, random.nextInt(256), random.nextInt(256), random.nextInt(256)),
+            duration: Duration(seconds: 1),
+            width: 50.0 + random.nextInt(251),
+            height: 50.0 + random.nextInt(251),
+          ),
         ),
-        body: Column(
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                ElevatedButton(onPressed: (){
-                  setState(() {
-                    widgets.add(Text("Data ke-" + counter.toString()));
-                    counter++;
-                  });
-                }, child: Text("Tambah Data")),
-                ElevatedButton(onPressed: (){
-                  setState(() {
-                    widgets.removeLast();
-                    counter--;
-                  });
-                }, child: Text("Hapus Data"))
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: widgets,
-            )
-          ],
         ),
       ),
     );
   }
 }
+
