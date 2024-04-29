@@ -13,31 +13,41 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Flexible Widget"),),
+        appBar: AppBar(
+          title: Text("Flexible Widget"),
+        ),
         body: Column(
           children: <Widget>[
             Flexible(
-                flex: 1,
-                child: Row(
-                  children: <Widget>[
-                    Flexible(
-                        flex: 1,
-                        child: Container(color: Colors.red,)),
-                    Flexible(
-                        flex: 1,
-                        child: Container(color: Colors.purple,)),
-                    Flexible(
-                        flex: 1,
-                        child: Container(color: Colors.amber,)),
-                  ]
-                ),
+              flex: 1,
+              child: Row(children: <Widget>[
+                Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.red,
+                    )),
+                Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.purple,
+                    )),
+                Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.amber,
+                    )),
+              ]),
             ),
             Flexible(
                 flex: 2,
-                child: Container(color: Colors.green,)),
+                child: Container(
+                  color: Colors.green,
+                )),
             Flexible(
                 flex: 1,
-                child: Container(color: Colors.blue,))
+                child: Container(
+                  color: Colors.blue,
+                ))
           ],
         ),
       ),
