@@ -14,40 +14,115 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Flexible Widget"),
+          title: Text('Belajar Stack dan Align'),
         ),
-        body: Column(
+        body: Stack(
           children: <Widget>[
-            Flexible(
-              flex: 1,
-              child: Row(children: <Widget>[
+            Column(
+              children: <Widget>[
                 Flexible(
                     flex: 1,
-                    child: Container(
-                      color: Colors.red,
+                    child: Row(
+                      children: <Widget>[
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              color: Colors.white,
+                            )),
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              color: Colors.black12,
+                            )),
+                      ],
                     )),
                 Flexible(
                     flex: 1,
-                    child: Container(
-                      color: Colors.purple,
-                    )),
-                Flexible(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.amber,
-                    )),
-              ]),
+                    child: Row(
+                      children: <Widget>[
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              color: Colors.black12,
+                            )),
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              color: Colors.white,
+                            )),
+                      ],
+                    ))
+              ],
             ),
-            Flexible(
-                flex: 2,
-                child: Container(
-                  color: Colors.green,
-                )),
-            Flexible(
-                flex: 1,
-                child: Container(
-                  color: Colors.blue,
-                ))
+            ListView(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text(
+                        "Ini adalah text untuk belajar Stack dan Align.",
+                        style: TextStyle(fontSize: 38),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text(
+                        "Ini adalah text untuk belajar Stack dan Align.",
+                        style: TextStyle(fontSize: 38),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text(
+                        "Ini adalah text untuk belajar Stack dan Align.",
+                        style: TextStyle(fontSize: 38),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text(
+                        "Ini adalah text untuk belajar Stack dan Align.",
+                        style: TextStyle(fontSize: 38),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text(
+                        "Ini adalah text untuk belajar Stack dan Align.",
+                        style: TextStyle(fontSize: 38),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text(
+                        "Ini adalah text untuk belajar Stack dan Align.",
+                        style: TextStyle(fontSize: 38),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text(
+                        "Ini adalah text untuk belajar Stack dan Align.",
+                        style: TextStyle(fontSize: 38),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            Align(
+              alignment: Alignment(0, 0.75),
+              child: ElevatedButton(
+                child: Text(
+                  'Ini adalah button',
+                  style: TextStyle(color: Colors.white),
+                ),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.purple)),
+                onPressed: null,
+              ),
+            )
           ],
         ),
       ),
