@@ -7,122 +7,41 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Belajar Stack dan Align'),
+          title: Text('Image Widget'),
         ),
-        body: Stack(
+        body: Column(
           children: <Widget>[
-            Column(
-              children: <Widget>[
-                Flexible(
-                    flex: 1,
-                    child: Row(
-                      children: <Widget>[
-                        Flexible(
-                            flex: 1,
-                            child: Container(
-                              color: Colors.white,
-                            )),
-                        Flexible(
-                            flex: 1,
-                            child: Container(
-                              color: Colors.black12,
-                            )),
-                      ],
-                    )),
-                Flexible(
-                    flex: 1,
-                    child: Row(
-                      children: <Widget>[
-                        Flexible(
-                            flex: 1,
-                            child: Container(
-                              color: Colors.black12,
-                            )),
-                        Flexible(
-                            flex: 1,
-                            child: Container(
-                              color: Colors.white,
-                            )),
-                      ],
-                    ))
-              ],
-            ),
-            ListView(
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text untuk belajar Stack dan Align.",
-                        style: TextStyle(fontSize: 38),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text untuk belajar Stack dan Align.",
-                        style: TextStyle(fontSize: 38),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text untuk belajar Stack dan Align.",
-                        style: TextStyle(fontSize: 38),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text untuk belajar Stack dan Align.",
-                        style: TextStyle(fontSize: 38),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text untuk belajar Stack dan Align.",
-                        style: TextStyle(fontSize: 38),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text untuk belajar Stack dan Align.",
-                        style: TextStyle(fontSize: 38),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text untuk belajar Stack dan Align.",
-                        style: TextStyle(fontSize: 38),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-            Align(
-              alignment: Alignment(0, 0.75),
-              child: ElevatedButton(
-                child: Text(
-                  'Ini adalah button',
-                  style: TextStyle(color: Colors.white),
+            Flexible(
+              flex: 1,
+              child: Center(
+                child: Container(
+                  color: Colors.black,
+                  width: 400,
+                  height: 400,
+                  child: Image.network(
+                    'https://static.wikia.nocookie.net/blue-archive/images/d/dd/Mika_Icon.png/revision/latest?cb=20210601102040',
+                    fit: BoxFit.scaleDown,
+                    repeat: ImageRepeat.repeat,
+                  ),
                 ),
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.purple)),
-                onPressed: null,
               ),
-            )
+            ),
+            Flexible(
+                flex: 1,
+                child: Center(
+                  child: Container(
+                      color: Colors.black,
+                      width: 400,
+                      height: 400,
+                      child: Image.asset('images/obs_bg_cover.png')),
+                ))
           ],
         ),
       ),
