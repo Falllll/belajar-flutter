@@ -7,44 +7,30 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Image Widget'),
+          title: Text("Spacer Widget"),
         ),
-        body: Column(
-          children: <Widget>[
-            Flexible(
-              flex: 1,
-              child: Center(
-                child: Container(
-                  color: Colors.black,
-                  width: 400,
-                  height: 400,
-                  child: Image.network(
-                    'https://static.wikia.nocookie.net/blue-archive/images/d/dd/Mika_Icon.png/revision/latest?cb=20210601102040',
-                    fit: BoxFit.scaleDown,
-                    repeat: ImageRepeat.repeat,
-                  ),
-                ),
-              ),
-            ),
-            Flexible(
-                flex: 1,
-                child: Center(
-                  child: Container(
-                      color: Colors.black,
-                      width: 400,
-                      height: 400,
-                      child: Image.asset('images/obs_bg_cover.png')),
-                ))
-          ],
-        ),
+        body: Center(
+          child: Row(
+            children: <Widget>[
+              Spacer(flex: 1,),
+              Container(color: Colors.red, width: 100, height: 100,),
+              Spacer(flex: 2,),
+              Container(color: Colors.green, width: 100, height: 100,),
+              Spacer(flex: 3,),
+              Container(color: Colors.blue, width: 100, height: 100,),
+              Spacer(flex: 4,),
+            ],
+          ),
+        )
       ),
     );
   }
 }
+
